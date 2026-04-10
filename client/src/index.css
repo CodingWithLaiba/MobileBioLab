@@ -1,0 +1,152 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(0, 0%, 100%);
+  --foreground: hsl(210, 11%, 20%);
+  --muted: hsl(210, 40%, 98%);
+  --muted-foreground: hsl(215, 13%, 45%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(210, 11%, 20%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(210, 11%, 20%);
+  --border: hsl(214, 32%, 91%);
+  --input: hsl(214, 32%, 91%);
+  --primary: hsl(190, 48%, 34%);
+  --primary-foreground: hsl(210, 40%, 98%);
+  --secondary: hsl(195, 39%, 49%);
+  --secondary-foreground: hsl(210, 40%, 98%);
+  --accent: hsl(28, 64%, 72%);
+  --accent-foreground: hsl(210, 11%, 20%);
+  --destructive: hsl(0, 84%, 60%);
+  --destructive-foreground: hsl(210, 40%, 98%);
+  --success: hsl(142, 51%, 44%);
+  --success-foreground: hsl(210, 40%, 98%);
+  --warning: hsl(28, 75%, 45%);
+  --warning-foreground: hsl(210, 40%, 98%);
+  --ring: hsl(190, 48%, 34%);
+  --radius: 0.5rem;
+  --chart-1: hsl(190, 48%, 34%);
+  --chart-2: hsl(195, 39%, 49%);
+  --chart-3: hsl(28, 64%, 72%);
+  --chart-4: hsl(142, 51%, 44%);
+  --chart-5: hsl(28, 75%, 45%);
+  --sidebar-background: hsl(0, 0%, 100%);
+  --sidebar-foreground: hsl(210, 11%, 20%);
+  --sidebar-primary: hsl(190, 48%, 34%);
+  --sidebar-primary-foreground: hsl(210, 40%, 98%);
+  --sidebar-accent: hsl(214, 32%, 91%);
+  --sidebar-accent-foreground: hsl(210, 11%, 20%);
+  --sidebar-border: hsl(214, 32%, 91%);
+  --sidebar-ring: hsl(190, 48%, 34%);
+}
+
+.dark {
+  --background: hsl(224, 71%, 4%);
+  --foreground: hsl(213, 31%, 91%);
+  --muted: hsl(223, 47%, 11%);
+  --muted-foreground: hsl(215.4, 16.3%, 56.9%);
+  --popover: hsl(224, 71%, 4%);
+  --popover-foreground: hsl(213, 31%, 91%);
+  --card: hsl(224, 71%, 4%);
+  --card-foreground: hsl(213, 31%, 91%);
+  --border: hsl(216, 34%, 17%);
+  --input: hsl(216, 34%, 17%);
+  --primary: hsl(190, 48%, 34%);
+  --primary-foreground: hsl(210, 40%, 98%);
+  --secondary: hsl(195, 39%, 49%);
+  --secondary-foreground: hsl(210, 40%, 98%);
+  --accent: hsl(28, 64%, 72%);
+  --accent-foreground: hsl(210, 11%, 20%);
+  --destructive: hsl(0, 63%, 31%);
+  --destructive-foreground: hsl(210, 40%, 98%);
+  --success: hsl(142, 51%, 44%);
+  --success-foreground: hsl(210, 40%, 98%);
+  --warning: hsl(28, 75%, 45%);
+  --warning-foreground: hsl(210, 40%, 98%);
+  --ring: hsl(216, 34%, 17%);
+  --chart-1: hsl(190, 48%, 34%);
+  --chart-2: hsl(195, 39%, 49%);
+  --chart-3: hsl(28, 64%, 72%);
+  --chart-4: hsl(142, 51%, 44%);
+  --chart-5: hsl(28, 75%, 45%);
+  --sidebar-background: hsl(224, 71%, 4%);
+  --sidebar-foreground: hsl(213, 31%, 91%);
+  --sidebar-primary: hsl(190, 48%, 34%);
+  --sidebar-primary-foreground: hsl(210, 40%, 98%);
+  --sidebar-accent: hsl(216, 34%, 17%);
+  --sidebar-accent-foreground: hsl(213, 31%, 91%);
+  --sidebar-border: hsl(216, 34%, 17%);
+  --sidebar-ring: hsl(190, 48%, 34%);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+    font-family: 'Roboto', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', sans-serif;
+  }
+
+  .font-code {
+    font-family: 'Source Code Pro', monospace;
+  }
+}
+
+@layer components {
+  .lab-white {
+    background-color: hsl(210, 40%, 98%);
+  }
+  
+  .text-charcoal {
+    color: hsl(210, 11%, 20%);
+  }
+
+  .bg-success {
+    background-color: hsl(142, 51%, 44%);
+  }
+
+  .text-success {
+    color: hsl(142, 51%, 44%);
+  }
+
+  .bg-warning {
+    background-color: hsl(28, 75%, 45%);
+  }
+
+  .text-warning {
+    color: hsl(28, 75%, 45%);
+  }
+
+  .scientific-gradient {
+    background: linear-gradient(135deg, hsl(190, 48%, 34%) 0%, hsl(195, 39%, 49%) 100%);
+  }
+
+  .stats-card {
+    @apply bg-white rounded-lg shadow-sm border border-border p-6 transition-all hover:shadow-md;
+  }
+
+  .nav-link {
+    @apply flex items-center px-3 py-2 text-sm font-medium rounded-md transition-colors;
+  }
+
+  .nav-link-active {
+    @apply nav-link text-primary;
+    background-color: hsl(var(--primary) / 0.1);
+  }
+
+  .nav-link-inactive {
+    @apply nav-link text-foreground hover:text-primary;
+  }
+  
+  .nav-link-inactive:hover {
+    background-color: hsl(var(--accent) / 0.5);
+  }
+}
